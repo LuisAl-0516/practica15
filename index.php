@@ -18,43 +18,70 @@
 <h2>Problema: Fuerzas en equilibrio</h2>
 <p>Descripción:</p>
 <p>
-    ¿A qué distancia de la Tierra debe estar un cuerpo para que
-    sienta un equilibrio entre las fuerzas gravitacionales que
-    ejercen sobre ́ el el Sol y la Tierra? La distancia media de Sol a
-    la Tierra es de 1·5 ×10E8 km y la masa del Sol es 332 946
-    masas terrestres</p>
+  Un panel fotovoltaico entrega una potencia util de 75000W. Suponiendo que la densidad de radiación sea de 1000W/m² y el rendimiento del panel sea 
+del 50% calcula la superficie del panel</p>
 </section>
 <section class="esquemaProblema">
 <h2>Esquema</h2>
 <!--Buscar o crear una impagen que represente el problema jpg o png-->
 <center>
-<img class="imgProblema" src="images/esquema.jpeg">
+<img class="imgProblema" src="images/panel.jpg">
 </center>
 </section>
 <section class="formulas">
 <h2>Fórmulas</h2>
-<img class="imgProblema" src="images/1.png">
+<h3>n= P util/ P real</h3>
+<h3>P = Q / t = (K*S*t)/t</h3>
+<h3>S = P / K</h3>
 <!--Aqui van las fórmulas a emplear, de preferencia despejar la variable a calcular-->
 </section>
 <section class="datos">
-<h2>Datos:</h2>
-<br>
-<p>Dt-s= 1.5E8 Km.</p><br>
-<p>Ms=332946*Mt</p><br>
-<!--A partir del enunciado del problema, ecribir una lista de los datos proporcionados para calcular en las unidades de Sistema Internacional de medidas. Incluir valores de constantes y datos de otras fuentes-->
-</section>
+    <h2>Datos:</h2>
+    <ul>
+      <li><strong>P util:</strong> 75000 W</li>
+      <li><strong>n:</strong> 0.5</li>
+      <li><strong>P real:</strong> ¿?</li>
+      
+      <br>
+      <li><strong>K:</strong> 1000 w/m²</li>
+      <li><strong>S:</strong> ¿?</li>
+      
+    </ul>
+  </section>
 <section class="calculos">
+<?php
+function calcularResultados() {
+    // Datos conocidos
+    $n = 0.5; //rendimiento
+    $putil = 75000; //potencia util
+    $preal = 0; //
+    $k = 1000; // densidad de radiacion w/m2
+    $preal =0; //preal
+    $s=0;//area
+    
+    $preal=$putil/$n;//calculamos preal
+    $s=$preal/$k;//calculamos la superficie
+    
+    // Cálculo de la temperatura final
+    
+
+    // Mostrar el resultado
+    return $s;
+}
+?>
 <h2>Solución</h2>
-<img class="imgProblema" src="images/2.png">
-<!--Se sustituyen los valores de los datos en la formula para indicar las operaciones a realizarse. No se procesan, ni se pone el resultado en esta sección-->
-<p>
-</p>
-<!--En el archivo js/calculaStem.js, implementar la función calcular() en JS, para resolver problema, definiendo las variables y obteniendo el resultado de aplicar las formulas y regresar el valor obtenido a la sección de resultado que indique las unidades correspondientes-->
-<button onclick="calcula()">Presiona para calcular</button>
+<img class="solu" src="images/solu.jpeg">
+<form method="post">
+                <button type="submit" name="calcular">Presiona para calcular</button>
+            </form>
 </section>
 <section class="resultado">
 <h2>Resultado:</h2>
-<div id="resultadoA"></div>
+<div id="resultadoA">
+<?php
+print"<h1>La superficie es de:".calcularResultados()."m²</h1>"
+?>
+</div>
 </section>
 </section>
 <footer class="pie">
